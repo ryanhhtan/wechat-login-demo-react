@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        <a href="http://192.168.2.222:4444/signup/wechat/authorize">Signup with wechat</a>
+        <a href="http://devroro.my:4444/login/wechat/authorize">Signup with wechat</a>
       </div>
     );
   }

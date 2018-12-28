@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import queryString from 'query-string';
 import { signupWithWechat } from '../../service'; 
 
-class WechatSignup extends Component {
+class WechatLogin extends Component {
   render() {
     const queries = queryString.parse(this.props.location.search);
     const code = queries.code;
@@ -19,5 +19,5 @@ class WechatSignup extends Component {
   }
 }
 
-export default WechatSignup;
+export default WechatLogin;
 

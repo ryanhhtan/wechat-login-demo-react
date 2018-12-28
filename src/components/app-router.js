@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import  WechatSignup from "./signup/wechat";
+import  WechatLogin from "./login/wechat";
 import  Home from "./home";
 
 const AppRouter = () => (
@@ -15,7 +15,7 @@ const AppRouter = () => (
       </nav>
 
       <Route path="/" exact component={Home} />
-      <Route path="/signup/wechat" component={WechatSignup} />
+      <Route path="/login/wechat" component={WechatLogin} />
     </div>
   </Router>
 );

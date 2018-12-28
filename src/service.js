@@ -1,11 +1,11 @@
-const url = 'http://192.168.2.222:4444/signup/wechat';
+const url = 'http://devroro.my:4444/login/wechat';
 
 const base64 = (string) => {
   return Buffer.from(string).toString('base64')
 }
 
-const makeClientAuthHeader = (clientId, clinetSecret) => {
-  return base64(`{clientId}:{clientSecret}`);
+const makeClientAuthHeader = (clientId, clientSecret) => {
+  return 'Basic ' + base64(`${clientId}:${clientSecret}`);
 }
 
 export const signupWithWechat = async(code) => {
