@@ -1,21 +1,39 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
-import { signupWithWechat } from '../../service'; 
+import { signinWithWechat } from '../../service'; 
 
 class WechatLogin extends Component {
-  render() {
+  state = {};
+  async componentDidMount() {
     const queries = queryString.parse(this.props.location.search);
     const code = queries.code;
-
-    const result = signupWithWechat(code);
-
-    console.log(result);
-
+    const auth = await signinWithWechat(code);
+    console.log(auth);
+    this.setState({
+      auth, 
+    });
+  }
+  render() {
+    const {auth} = this.state;
     return (
       <div className="App">
-        <p>Wechat signup with code: {code}</p>
+        { auth && 
+            this.extractObject(auth)
+        }
       </div>
     );
+  }
+
+  extractObject (obj) {
+    return Object.keys(obj).map(key => {
+      const content =(typeof obj[key] === 'object') 
+        ? (
+          <div key={key}>{key}: {this.extractObject(obj[key])} </div>
+        ):(
+          <div key={key}>{key}: {obj[key]}</div>
+        );
+      return content;
+    });
   }
 }
 

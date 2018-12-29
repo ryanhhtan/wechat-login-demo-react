@@ -15,7 +15,7 @@ const AppRouter = () => (
       </nav>
 
       <Route path="/" exact component={Home} />
-      <Route path="/login/wechat" component={WechatLogin} />
+      <Route path="/auth/login/wechat" component={WechatLogin} />
     </div>
   </Router>
 );
