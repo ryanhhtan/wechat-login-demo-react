@@ -1,4 +1,4 @@
-const url = process.env.REACT_APP_AUTH_URL
+const url = `${process.env.REACT_APP_AUTH_URL}/login/wechat`
 
 const base64 = (string) => {
   return Buffer.from(string).toString('base64');
